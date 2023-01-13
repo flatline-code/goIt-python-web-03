@@ -44,11 +44,6 @@ if __name__ == '__main__':
     timer = time()
     print('Start of multiprocessing calc')
     
-    # with Pool(processes=cpu_count()) as pool:
-    #     a, b, c, d = pool.map(factorize, (128, 255, 99999, 10651060))
-    #     pool.close()
-    #     pool.join()
-
     with ProcessPoolExecutor(cpu_count()) as executor:
         a, b, c, d = executor.map(factorize, (128, 255, 99999, 10651060))
         
